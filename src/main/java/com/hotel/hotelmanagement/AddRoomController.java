@@ -16,6 +16,7 @@ import static com.hotel.hotelmanagement.RoomController.rooms;
 
 public class AddRoomController implements Initializable {
 
+    public ComboBox<String> rType;
     @FXML
     private Button add;
 
@@ -38,7 +39,8 @@ public class AddRoomController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
         connection = dbConnection.getConnection();
-    }
+        rType.getItems().removeAll(rType.getItems());
+        rType.getItems().addAll("Single", "Double", "Triple", "Quad", "Queen", "King", "Twin", "Double-double", "Studio", "Master Suite", "Mini-Suite");   }
 
     public void handleAddAction(javafx.event.ActionEvent actionEvent) {
         String query = "INSERT INTO rooms (roomNumber, roomType, price) VALUES (?,?,?)";
