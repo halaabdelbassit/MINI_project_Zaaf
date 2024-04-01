@@ -50,8 +50,8 @@ public class AddRoomController implements Initializable {
             pst.setString(2,rType.getSelectionModel().getSelectedItem());
 
             pst.setString(3, price.getText());
-            roomList.add(new Room(Integer.parseInt(number.getText()), Integer.parseInt(price.getText()), type.getText(), "Not Booked"));
-            rooms.add(new Room(Integer.parseInt(number.getText()), Integer.parseInt(price.getText()), type.getText(), "Not Booked"));
+            roomList.add(new Room(Integer.parseInt(number.getText()), Integer.parseInt(price.getText()), rType.getSelectionModel().getSelectedItem(), "Not Booked"));
+            rooms.add(new Room(Integer.parseInt(number.getText()), Integer.parseInt(price.getText()), rType.getSelectionModel().getSelectedItem(), "Not Booked"));
             pst.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
