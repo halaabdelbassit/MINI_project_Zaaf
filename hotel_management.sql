@@ -19,7 +19,7 @@ CREATE TABLE `customers`
     `ctmrGender`      varchar(10)         NOT NULL,
     `ctmrPhoneNo`     int(50)             NOT NULL,
     `ctmrEmail`       varchar(50)         NOT NULL,
-    `Bounce`          int(50)             NOT NULL DEFAULT 0
+    `ctmrDiscount`    int(50) NOT NULL DEFAULT 0
 );
 
 CREATE TABLE `reservations`

@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckInController">
+<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckInController">
    <children>
       <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="347.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -59,6 +59,8 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
+            <TextField fx:id="discount" layoutX="457.0" layoutY="201.0" promptText="Yes / no" />
+            <Label layoutX="457.0" layoutY="169.0" text="Descount" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="15.0" layoutY="359.0" prefHeight="306.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
