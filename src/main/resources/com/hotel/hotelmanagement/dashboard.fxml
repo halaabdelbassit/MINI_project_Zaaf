@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.DashBoardController">
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.DashBoardController">
    <children>
       <AnchorPane layoutX="15.0" layoutY="10.0" prefHeight="95.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -79,7 +79,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="310.0" prefHeight="200.0" prefWidth="344.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="685.0" layoutY="229.0" prefHeight="200.0" prefWidth="344.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="121.0" layoutY="189.0" text="TOTAL EARNINGS" textFill="#9e9e9e">
                <font>
@@ -98,7 +98,7 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="346.0" layoutY="312.0" prefHeight="200.0" prefWidth="344.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="705.0" layoutY="22.0" prefHeight="200.0" prefWidth="344.0" style="-fx-background-color: #ffffff;">
          <children>
             <Label layoutX="111.0" layoutY="190.0" text="PENDING PAYMENTS" textFill="#9e9e9e">
                <font>
