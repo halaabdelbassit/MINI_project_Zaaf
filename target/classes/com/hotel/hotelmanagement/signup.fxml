@@ -37,16 +37,7 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <RadioButton fx:id="male" layoutX="157.0" layoutY="388.0" mnemonicParsing="false" text="Male" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="female" layoutX="374.0" layoutY="388.0" mnemonicParsing="false" text="Female" textFill="WHITE">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
+
       <TextField fx:id="address" layoutX="157.0" layoutY="628.0" prefHeight="25.0" prefWidth="287.0" promptText="Enter Your Address">
          <font>
             <Font size="14.0" />

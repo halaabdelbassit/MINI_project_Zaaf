@@ -35,8 +35,6 @@ public class LoginController implements Initializable {
     @FXML
     private TextField username;
 
-    private Connection connection;
-
     private DBConnection dbConnection;
 
     private PreparedStatement pst;
@@ -58,7 +56,7 @@ public class LoginController implements Initializable {
 
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent actionEvent) throws IOException {
-        connection = dbConnection.getConnection();
+        Connection connection = dbConnection.getConnection();
         String query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
             pst = connection.prepareStatement(query);
@@ -104,3 +102,59 @@ public class LoginController implements Initializable {
         alert.showAndWait();
     }
 }
+
+
+
+/*
+
+
+    private Connection connection;
+
+    private DBConnection dbConnection;
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        dbConnection = new DBConnection();
+    }
+
+
+
+    @FXML
+    public void handleLoginAction(javafx.event.ActionEvent actionEvent) throws IOException {
+        connection = DBConnection.getConnection();
+        CallableStatement stmt =null;
+
+        String query;
+        try {
+            stmt= connection.prepareCall("{call LoginUser(?,?,?)}");
+
+            stmt.registerOutParameter(1, Types.VARCHAR);
+
+            stmt.setString(2, username.getText());
+            stmt.setString(3, password.getText());
+            ResultSet rs = stmt.executeQuery();
+            int count = 0;
+            while (rs.next()) {
+                HomePageController.name = rs.getString("name");
+                count = 1;
+            }
+            if (count == 1) {
+                login.getScene().getWindow().hide();
+                Stage signup = new Stage();
+                Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                Scene scene = new Scene(root);
+                signup.setScene(scene);
+                signup.show();
+            } else {
+                OptionPane("Username or Password is not Correct", "Error Message");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+}
+* */
