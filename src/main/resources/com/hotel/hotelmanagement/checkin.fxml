@@ -10,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckInController">
+<AnchorPane prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckInController">
    <children>
-      <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="347.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="300.0" prefWidth="1000.0" style="-fx-background-color: #ffffff;">
          <children>
             <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="28.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -49,37 +49,29 @@
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="price" layoutX="31.0" layoutY="277.0" text="Price:">
+            <Label fx:id="price" layoutX="233.0" layoutY="248.0" text="Price:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="amount" layoutX="31.0" layoutY="308.0" text="Total Amount:">
+            <Label fx:id="amount" layoutX="413.0" layoutY="248.0" text="Total Amount:">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
             </Label>
+            <TextField fx:id="discount" layoutX="457.0" layoutY="201.0" promptText="Yes / no" />
+            <Label layoutX="457.0" layoutY="169.0" text="Descount" />
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="15.0" layoutY="359.0" prefHeight="306.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="18.0" layoutY="312.0" prefHeight="200.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
          <children>
-            <TextField fx:id="cName" layoutX="32.0" layoutY="86.0" prefHeight="25.0" prefWidth="174.0" promptText="Full Name" />
-            <TextField fx:id="cPhone" layoutX="32.0" layoutY="155.0" prefHeight="25.0" prefWidth="174.0" promptText="Contact Number" />
-            <TextField fx:id="cNationality" layoutX="32.0" layoutY="233.0" prefHeight="25.0" prefWidth="174.0" promptText="Nationality" />
-            <TextField fx:id="cNumber" layoutX="258.0" layoutY="86.0" prefHeight="25.0" prefWidth="174.0" promptText="ID Number" />
-            <TextField fx:id="cEmail" layoutX="258.0" layoutY="155.0" prefHeight="25.0" prefWidth="174.0" promptText="Email Address" />
-            <TextField fx:id="cGender" layoutX="258.0" layoutY="233.0" prefHeight="25.0" prefWidth="174.0" promptText="Gender" />
-            <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="32.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@res/icons8-customer-30.png" />
-               </image>
-            </ImageView>
-            <Label layoutX="62.0" layoutY="25.0" text="Customer Details">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Button fx:id="submit" layoutX="607.0" layoutY="272.0" mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit" />
+            <TextField fx:id="cName" layoutX="35.0" layoutY="18.0" prefHeight="25.0" prefWidth="174.0" promptText="Full Name" />
+            <TextField fx:id="cPhone" layoutX="35.0" layoutY="61.0" prefHeight="25.0" prefWidth="174.0" promptText="Contact Number" />
+            <TextField fx:id="cNationality" layoutX="40.0" layoutY="95.0" prefHeight="25.0" prefWidth="174.0" promptText="Nationality" />
+            <TextField fx:id="cNumber" layoutX="255.0" layoutY="20.0" prefHeight="25.0" prefWidth="174.0" promptText="ID Number" />
+            <TextField fx:id="cEmail" layoutX="255.0" layoutY="63.0" prefHeight="25.0" prefWidth="174.0" promptText="Email Address" />
+            <TextField fx:id="cGender" layoutX="258.0" layoutY="94.0" prefHeight="25.0" prefWidth="174.0" promptText="Gender" />
+            <Button fx:id="submit" layoutX="548.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleSubmitAction" text="Submit" />
          </children>
       </AnchorPane>
    </children>
