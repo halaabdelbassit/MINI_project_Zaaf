@@ -21,6 +21,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class RoomController implements Initializable {
@@ -56,7 +57,7 @@ public class RoomController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
-        connection = dbConnection.getConnection();
+        connection = DBConnection.getConnection();
         roomNumber.setCellValueFactory(new PropertyValueFactory<>("number"));
         roomType.setCellValueFactory(new PropertyValueFactory<>("type"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
@@ -71,7 +72,7 @@ public class RoomController implements Initializable {
 
     public void handleAddAction(javafx.event.ActionEvent actionEvent) throws IOException {
         Stage add = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("addroom.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("addroom.fxml")));
         Scene scene = new Scene(root);
         add.setScene(scene);
         add.show();
@@ -87,7 +88,7 @@ public class RoomController implements Initializable {
                 if (roomTable.getSelectionModel().getSelectedItem().getStatus().equals("Booked")) {
                     CustomerController.setSelectedRoomNumber(roomTable.getSelectionModel().getSelectedItem().getNumber());
                     Stage add = new Stage();
-                    Parent root = FXMLLoader.load(getClass().getResource("customerinfo.fxml"));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("customerinfo.fxml")));
                     Scene scene = new Scene(root);
                     add.setScene(scene);
                     add.show();
