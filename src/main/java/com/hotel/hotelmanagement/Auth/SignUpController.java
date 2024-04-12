@@ -1,5 +1,7 @@
-package com.hotel.hotelmanagement;
+package com.hotel.hotelmanagement.Auth;
 
+
+import com.hotel.hotelmanagement.DBConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
