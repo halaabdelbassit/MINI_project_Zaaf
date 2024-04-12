@@ -62,17 +62,22 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="checkout" alignment="BASELINE_LEFT" layoutX="106.0" layoutY="70.0" mnemonicParsing="false" onAction="#createCheckOut" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="         Customer Check Out">
+            <Button fx:id="checkout" alignment="BASELINE_LEFT" layoutY="84.0" mnemonicParsing="false" onAction="#createCheckOut" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="         Customer Check Out">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="bill" alignment="BASELINE_LEFT" layoutX="562.0" layoutY="69.0" mnemonicParsing="false" onAction="#createCustomerBill" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="         Customer Bill">
+            <Button fx:id="bill" alignment="BASELINE_LEFT" layoutX="628.0" layoutY="84.0" mnemonicParsing="false" onAction="#createCustomerBill" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="         Customer Bill">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
             <Button fx:id="dash" alignment="BASELINE_LEFT" layoutX="-2.0" layoutY="15.0" mnemonicParsing="false" onAction="#createDash" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="          Dashboard">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Addcstmr" alignment="BASELINE_LEFT" layoutX="384.0" layoutY="89.0" mnemonicParsing="false" onAction="#createRoom" prefHeight="44.0" prefWidth="280.0" style="-fx-background-color: #ffffff;" text="Add customer">
                <font>
                   <Font size="18.0" />
                </font>
