@@ -17,6 +17,7 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
@@ -138,7 +139,7 @@ public class HomePageController implements Initializable {
             checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Add_cstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-            Pane = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+            Pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard.fxml")));
             setNode(Pane);
             dash.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
         } catch (IOException e) {
