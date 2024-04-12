@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class Addcstmr {
@@ -32,11 +33,11 @@ public class Addcstmr {
 
     private DBConnection dbConnection;
 
-    private PreparedStatement pst;
+
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
-        connection = dbConnection.getConnection();
+        connection = DBConnection.getConnection();
     }
 
     public void handleSubmitAction(ActionEvent actionEvent) {
@@ -44,7 +45,35 @@ public class Addcstmr {
         String email = cEmail.getText();
         String gender = cGender.getText();
         String nationality = cNationality.getText();
-        String number = cNumber.getText();
+        String numberStr = cNumber.getText();
+        int number = Integer.parseInt(numberStr);
         String phone = cPhone.getText();
+
+        PreparedStatement pst =null;
+        try {
+            pst = connection.prepareStatement("INSERT INTO customers(ctmrIDNumber, ctmrName" +
+                    ",ctmrNationality,ctmrGender,ctmrPhone,ctmrEmail) VALUES(?,?,?,?,?,?)");
+            pst.setInt(1, number);
+            pst.setString(2, name);
+            pst.setString(3, email);
+            pst.setString(4, gender);
+            pst.setString(5, nationality);
+            pst.setString(6, phone);
+
+            pst.executeUpdate();
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (pst != null)
+                    pst.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
+
+
 }

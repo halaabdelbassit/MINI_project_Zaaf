@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="675.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckOutController">
+<AnchorPane prefHeight="500.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hotel.hotelmanagement.CheckOutController">
    <children>
       <AnchorPane layoutX="15.0" layoutY="8.0" prefHeight="85.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
          <children>
@@ -26,7 +26,7 @@
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="15.0" layoutY="95.0" prefHeight="570.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="15.0" layoutY="95.0" prefHeight="330.0" prefWidth="690.0" style="-fx-background-color: #ffffff;">
          <children>
             <TextField fx:id="search" layoutX="61.0" layoutY="23.0" onKeyReleased="#handleSearchKey" prefHeight="25.0" prefWidth="212.0" promptText="Type Room Number" />
             <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="28.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
@@ -34,7 +34,7 @@
                   <Image url="@res/icons8-search-32.png" />
                </image>
             </ImageView>
-            <TableView fx:id="roomTable" layoutX="28.0" layoutY="74.0" onMouseClicked="#clickItem" prefHeight="470.0" prefWidth="634.0">
+            <TableView fx:id="roomTable" layoutX="28.0" layoutY="60.0" onMouseClicked="#clickItem" prefHeight="340.0" prefWidth="634.0">
                <columns>
                   <TableColumn fx:id="roomNumber" minWidth="95.0" prefWidth="101.0" text="Room Number" />
                   <TableColumn fx:id="customerName" minWidth="4.0" prefWidth="105.0" text="Customer Name" />

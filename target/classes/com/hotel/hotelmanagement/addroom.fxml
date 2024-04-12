@@ -17,7 +17,6 @@
          </font>
       </Label>
       <TextField fx:id="number" layoutX="108.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Number" />
-      <TextField fx:id="type" layoutX="108.0" layoutY="300.0" prefHeight="25.0" prefWidth="250.0" promptText="Room Type" />
       <TextField fx:id="price" layoutX="108.0" layoutY="400.0" prefHeight="25.0" prefWidth="250.0" promptText="Price" />
       <Button fx:id="add" layoutX="189.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleAddAction" style="-fx-background-color: #2196f3;" text="Add Room" textFill="WHITE" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="72.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
@@ -40,6 +39,6 @@
             <Font name="System Bold" size="30.0" />
          </font>
       </Label>
-      <ComboBox layoutX="102.0" layoutY="164.0" prefHeight="26.0" prefWidth="250.0" />
+      <ComboBox fx:id="rType" layoutX="102.0" layoutY="300.0" prefHeight="26.0" prefWidth="250.0" />
    </children>
 </AnchorPane>

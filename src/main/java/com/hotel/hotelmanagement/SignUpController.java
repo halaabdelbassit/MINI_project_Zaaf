@@ -81,8 +81,8 @@ public class SignUpController implements Initializable {
                 || question_text.isEmpty() || answer_text.isEmpty() || address_text.isEmpty()) {
             OptionPane("Every Field is required", "Error Message");
         } else {
-            String insert = "INSERT INTO users(name, username, password, gender, securityQuestion, answer, address)"
-                    + "VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String insert = "INSERT INTO users(name, username, password, gender, address)"
+                    + "VALUES (?, ?, ?, ?, ?)";
             connection = dbConnection.getConnection();
             try {
                 pst = connection.prepareStatement(insert);
@@ -94,8 +94,6 @@ public class SignUpController implements Initializable {
                 pst.setString(2, username_text);
                 pst.setString(3, password_text);
                 pst.setString(4, gender_text);
-                pst.setString(5, question_text);
-                pst.setString(6, answer_text);
                 pst.setString(7, address_text);
                 pst.executeUpdate();
                 OptionPane("Register Successfully", "Message");

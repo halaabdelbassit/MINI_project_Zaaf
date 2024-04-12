@@ -18,6 +18,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 
@@ -56,7 +57,7 @@ public class LoginController implements Initializable {
 
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent actionEvent) throws IOException {
-        Connection connection = dbConnection.getConnection();
+        Connection connection = DBConnection.getConnection();
         String query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
             pst = connection.prepareStatement(query);
@@ -71,7 +72,7 @@ public class LoginController implements Initializable {
             if (count == 1) {
                 login.getScene().getWindow().hide();
                 Stage signup = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("homepage.fxml")));
                 Scene scene = new Scene(root);
                 signup.setScene(scene);
                 signup.show();
@@ -87,7 +88,7 @@ public class LoginController implements Initializable {
     public void handleForgotAction(javafx.event.ActionEvent actionEvent) throws IOException {
         login.getScene().getWindow().hide();
         Stage signup = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("forgotpassword.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("forgotpassword.fxml")));
         Scene scene = new Scene(root);
         signup.setScene(scene);
         signup.show();
