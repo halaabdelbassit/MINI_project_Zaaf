@@ -74,4 +74,5 @@ BEGIN
     RETURN msg;
 END; 
 
+SELECT signUp('John Doe', 'johndoe', 'password123', '123 Main St');
 
