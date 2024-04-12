@@ -20,6 +20,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class HomePageController implements Initializable {
+    @FXML
+    public Button Addcstmr;
 
     @FXML
     private Label adminName;
@@ -71,6 +73,8 @@ public class HomePageController implements Initializable {
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Pane = FXMLLoader.load(getClass().getResource("room.fxml"));
+            Addcstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+
             setNode(Pane);
             room.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
         } catch (IOException e) {
@@ -85,6 +89,8 @@ public class HomePageController implements Initializable {
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Pane = FXMLLoader.load(getClass().getResource("checkin.fxml"));
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            Addcstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+
             setNode(Pane);
             checkin.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
         } catch (IOException e) {
@@ -98,6 +104,8 @@ public class HomePageController implements Initializable {
             checkin.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            Addcstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+
             Pane = FXMLLoader.load(getClass().getResource("checkout.fxml"));
             setNode(Pane);
             checkout.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
@@ -112,6 +120,8 @@ public class HomePageController implements Initializable {
             checkin.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            Addcstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+
             Pane = FXMLLoader.load(getClass().getResource("bill.fxml"));
             setNode(Pane);
             bill.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
@@ -126,9 +136,25 @@ public class HomePageController implements Initializable {
             checkin.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            Addcstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Pane = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
             setNode(Pane);
             dash.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void Addcstmr(javafx.event.ActionEvent actionEvent) {
+        try {
+            room.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            checkin.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            Pane = FXMLLoader.load(getClass().getResource("addcstmr.fxml"));
+            setNode(Pane);
+            Addcstmr.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
         } catch (IOException e) {
             e.printStackTrace();
         }

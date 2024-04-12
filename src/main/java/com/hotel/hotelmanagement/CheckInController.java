@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.stage.StageStyle;
+import javafx.event.ActionEvent;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +17,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 public class CheckInController implements Initializable {
+    public TextField discount;
     @FXML
     private Label amount;
 
@@ -41,8 +45,6 @@ public class CheckInController implements Initializable {
     @FXML
     private TextField cPhone;
 
-    @FXML
-    private Button submit;
 
     @FXML
     private DatePicker inDate;
@@ -53,6 +55,8 @@ public class CheckInController implements Initializable {
     @FXML
     private ComboBox<String> rNo;
 
+    @FXML
+    private Button checkIn;
     @FXML
     private ComboBox<String> rType;
 
@@ -128,12 +132,34 @@ public class CheckInController implements Initializable {
         String date = inDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
-    public void handleCheckOutPick(javafx.event.ActionEvent actionEvent) {
-        int x = outDate.getValue().compareTo(inDate.getValue());
+
+
+    public void handleCheckOutPick(ActionEvent actionEvent) {
+        // Assuming inDate and outDate are LocalDate instances
+        // Assuming discount, days, price, and amount are UI elements (e.g., TextField, Label)
+
+        long x = handleCheckInPick2(actionEvent); // Call the method to get the number of days
+
+        if (discount.equals("yes")) {
+            int p = Integer.parseInt(price.getText().replace("Price: ", ""));
+            amount.setText("Total Amount: " + (x * (p - (p / 4))));
+        } else {
+            int p = Integer.parseInt(price.getText().replace("Price: ", ""));
+            amount.setText("Total Amount: " + (p * x));
+        }
+
         days.setText("Total days: " + x);
-        int p = Integer.parseInt(price.getText().replace("Price: ", ""));
-        amount.setText("Total Amount: " + (p * x));
     }
+
+    public long handleCheckInPick2(ActionEvent actionEvent) {
+        LocalDate startDate = LocalDate.parse(inDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        LocalDate endDate = LocalDate.parse(outDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+
+        return ChronoUnit.DAYS.between(startDate, endDate);
+    }
+
+
+
 
     public void handleSubmitAction(javafx.event.ActionEvent actionEvent) {
         String name = cName.getText();
@@ -142,10 +168,40 @@ public class CheckInController implements Initializable {
         String nationality = cNationality.getText();
         String number = cNumber.getText();
         String phone = cPhone.getText();
+        String Discount = discount.getText();
         String roomNo = rNo.getSelectionModel().getSelectedItem();
         String checkIn = inDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         String checkOut = outDate.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        if (name.equals("") || email.equals("") || gender.equals("") || nationality.equals("")
+        if (Discount.equals("yes")) {
+            // subtract 100 points from his cmtrDiscount
+            String query = "SELECT cmtrDiscount FROM customers WHERE customerIDNumber=?";
+            try {
+                pst = connection.prepareStatement(query);
+                pst.setString(1, number);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    int discount = Integer.parseInt(rs.getString("cmtrDiscount"));
+                    if (discount >= 100) {
+                        discount = discount - 100;
+                        String update = "UPDATE customers SET cmtrDiscount=? WHERE customerIDNumber=?";
+                        try {
+                            pst = connection.prepareStatement(update);
+                            pst.setString(1, Integer.toString(discount));
+                            pst.setString(2, number);
+                            pst.executeUpdate();
+                        } catch (SQLException e) {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        OptionPane("Not Enough Points", "Error Message");
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+
+            if (name.equals("") || email.equals("") || gender.equals("") || nationality.equals("")
                 || number.equals("") || phone.equals("") || roomNo.equals("") || checkIn.equals("") || checkOut.equals("")) {
             OptionPane("Every Field is required", "Error Message");
         } else {
@@ -194,7 +250,32 @@ public class CheckInController implements Initializable {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+            // add to custumer 10 point in his discount
+            String query1 = "SELECT cmtrDiscount FROM customers WHERE customerIDNumber=?";
+            try {
+                pst = connection.prepareStatement(query1);
+                pst.setString(1, number);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    int discount = Integer.parseInt(rs.getString("cmtrDiscount"));
+                    discount = discount + 10;
+                    String update = "UPDATE customers SET cmtrDiscount=? WHERE customerIDNumber=?";
+                    try {
+                        pst = connection.prepareStatement(update);
+                        pst.setString(1, Integer.toString(discount));
+                        pst.setString(2, number);
+                        pst.executeUpdate();
+                    } catch (SQLException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
             OptionPane("Check In Successful", "Message");
+        }
+        } else {
+            OptionPane("Customr dont have 100 point", "Error Message");
         }
     }
 
