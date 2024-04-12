@@ -14,14 +14,14 @@
          <children>
             <ImageView fx:id="logout" fitHeight="60.0" fitWidth="60.0" layoutX="904.0" layoutY="33.0" onMouseClicked="#handleLogout" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-logout-60.png" />
+                  <Image url="@rese/icons8-logout-60.png" />
                </image>
             </ImageView>
             <AnchorPane layoutX="-3.0" layoutY="1.0" prefHeight="133.0" prefWidth="294.0" style="-fx-background-color: #ffffff;">
                <children>
                   <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="21.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@res/usericon.png" />
+                        <Image url="@rese/usericon.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="adminName" layoutX="122.0" layoutY="40.0" text="Admin" textFill="#4c587c">

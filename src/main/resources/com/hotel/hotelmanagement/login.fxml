@@ -14,7 +14,7 @@
       <TextField fx:id="username" layoutX="416.0" layoutY="270.0" prefHeight="25.0" prefWidth="329.0" promptText="Username" />
       <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="537.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-hotel-64.png" />
+            <Image url="@rese/icons8-hotel-64.png" />
          </image>
       </ImageView>
       <Label layoutX="415.0" layoutY="140.0" text="Hotel" textFill="#2196f3">
@@ -29,12 +29,12 @@
       </Label>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="383.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-lock-24.png" />
+            <Image url="@rese/icons8-lock-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="383.0" layoutY="271.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-user-24.png" />
+            <Image url="@rese/icons8-user-24.png" />
          </image>
       </ImageView>
       <PasswordField fx:id="password" layoutX="416.0" layoutY="350.0" prefHeight="25.0" prefWidth="329.0" promptText="Password" />
@@ -52,7 +52,7 @@
          <children>
             <ImageView fitHeight="600.0" fitWidth="400.0" layoutX="-59.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/72da1854c67eb8258efa3eed2fbdec8d.jpg" />
+                  <Image url="@rese/72da1854c67eb8258efa3eed2fbdec8d.jpg" />
                </image>
             </ImageView>
          </children>

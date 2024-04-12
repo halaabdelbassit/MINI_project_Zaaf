@@ -12,7 +12,7 @@
          <children>
             <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-room-64.png" />
+                  <Image url="@rese/icons8-room-64.png" />
                </image>
             </ImageView>
             <Label layoutX="56.0" layoutY="25.0" text="Dashboard">
@@ -36,7 +36,7 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="89.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-occupied-bed-48.png" />
+                  <Image url="@rese/icons8-occupied-bed-48.png" />
                </image>
             </ImageView>
          </children>
@@ -55,7 +55,7 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="89.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-cancel-48.png" />
+                  <Image url="@rese/icons8-cancel-48.png" />
                </image>
             </ImageView>
          </children>
@@ -74,7 +74,7 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="89.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-ok-48.png" />
+                  <Image url="@rese/icons8-ok-48.png" />
                </image>
             </ImageView>
          </children>
@@ -93,7 +93,7 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="146.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-love-for-money-64.png" />
+                  <Image url="@rese/icons8-love-for-money-64.png" />
                </image>
             </ImageView>
          </children>
@@ -112,7 +112,7 @@
             </Label>
             <ImageView fitHeight="48.0" fitWidth="48.0" layoutX="148.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@res/icons8-bank-card-euro-48.png" />
+                  <Image url="@rese/icons8-bank-card-euro-48.png" />
                </image>
             </ImageView>
          </children>

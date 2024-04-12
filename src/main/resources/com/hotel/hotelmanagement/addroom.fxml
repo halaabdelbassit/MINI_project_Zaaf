@@ -21,17 +21,17 @@
       <Button fx:id="add" layoutX="189.0" layoutY="500.0" mnemonicParsing="false" onAction="#handleAddAction" style="-fx-background-color: #2196f3;" text="Add Room" textFill="WHITE" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="72.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-bed-24.png" />
+            <Image url="@rese/icons8-bed-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="72.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-expensive-price-24.png" />
+            <Image url="@rese/icons8-expensive-price-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="72.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-numbers-input-form-24.png" />
+            <Image url="@rese/icons8-numbers-input-form-24.png" />
          </image>
       </ImageView>
       <Label layoutX="181.0" layoutY="80.0" text="New Room" textFill="WHITE">

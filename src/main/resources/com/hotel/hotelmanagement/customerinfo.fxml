@@ -12,7 +12,7 @@
       <TextField fx:id="price" layoutX="176.0" layoutY="685.0" prefHeight="25.0" prefWidth="250.0" promptText="Total Price" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="685.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-expensive-price-24.png" />
+            <Image url="@rese/icons8-expensive-price-24.png" />
          </image>
       </ImageView>
       <TextField fx:id="name" layoutX="174.0" layoutY="160.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer Name" />
@@ -20,17 +20,17 @@
       <TextField fx:id="outDate" layoutX="176.0" layoutY="610.0" prefHeight="25.0" prefWidth="250.0" promptText="Check out Date" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-user-24.png" />
+            <Image url="@rese/icons8-user-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="535.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-date-to-24.png" />
+            <Image url="@rese/icons8-date-to-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-date-from-24.png" />
+            <Image url="@rese/icons8-date-from-24.png" />
          </image>
       </ImageView>
       <TextField fx:id="phone" layoutX="176.0" layoutY="235.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer Phone Number" />
@@ -39,22 +39,22 @@
       <TextField fx:id="nationality" layoutX="176.0" layoutY="460.0" prefHeight="25.0" prefWidth="250.0" promptText="Customer Nationality" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-gender-24.png" />
+            <Image url="@rese/icons8-gender-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-location-24.png" />
+            <Image url="@rese/icons8-location-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-ringing-phone-24.png" />
+            <Image url="@rese/icons8-ringing-phone-24.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@res/icons8-mail-24.png" />
+            <Image url="@rese/icons8-mail-24.png" />
          </image>
       </ImageView>
       <Label layoutX="107.0" layoutY="54.0" text="CUSTOMER INFORMATION" textFill="WHITE">
