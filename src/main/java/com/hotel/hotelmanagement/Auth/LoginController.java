@@ -38,13 +38,9 @@ public class LoginController implements Initializable {
     @FXML
     private TextField username;
 
-    private DBConnection dbConnection;
-
-    private PreparedStatement pst;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        dbConnection = new DBConnection();
+        DBConnection dbConnection = new DBConnection();
     }
 
     @FXML
@@ -62,7 +58,7 @@ public class LoginController implements Initializable {
         Connection connection = DBConnection.getConnection();
         String query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
-            pst = connection.prepareStatement(query);
+            PreparedStatement pst = connection.prepareStatement(query);
             pst.setString(1, username.getText());
             pst.setString(2, password.getText());
             ResultSet rs = pst.executeQuery();
