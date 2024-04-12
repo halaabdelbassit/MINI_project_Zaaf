@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 public class HomePageController implements Initializable {
     @FXML
     public Button Add_cstmr;
+
     @FXML
     private Label adminName;
 
@@ -87,8 +88,9 @@ public class HomePageController implements Initializable {
             checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-            Pane = FXMLLoader.load(getClass().getResource("checkin.fxml"));
             Add_cstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+
+            Pane = FXMLLoader.load(getClass().getResource("checkin.fxml"));
 
             setNode(Pane);
             checkin.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
