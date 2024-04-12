@@ -150,7 +150,7 @@ public class HomePageController implements Initializable {
             checkin.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             checkout.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             bill.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
-            Add_cstmr.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
+            dash.setStyle("-fx-background-color:  #ffffff; -fx-text-fill: #000000");
             Pane = FXMLLoader.load(getClass().getResource("addcstmr.fxml"));
             setNode(Pane);
             Add_cstmr.setStyle("-fx-background-color:  #2D3347; -fx-text-fill: #ffffff");
