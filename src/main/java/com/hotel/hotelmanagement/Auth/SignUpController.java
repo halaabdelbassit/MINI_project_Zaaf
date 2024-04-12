@@ -65,24 +65,19 @@ public class SignUpController implements Initializable {
         String name_text = name.getText();
         String username_text = username.getText();
         String password_text = password.getText();
-        String gender_text = getGender();
-        String question_text = question.getSelectionModel().getSelectedItem();
-        String answer_text = answer.getText();
         String address_text = address.getText();
 
         assert name_text != null;
         assert username_text != null;
         assert password_text != null;
-        assert gender_text != null;
-        assert question_text != null;
-        assert answer_text != null;
+
         assert address_text != null;
-        if (name_text.isEmpty() || username_text.isEmpty() || password_text.isEmpty() || gender_text.isEmpty()
-                || question_text.isEmpty() || answer_text.isEmpty() || address_text.isEmpty()) {
+        if (name_text.isEmpty() || username_text.isEmpty() || password_text.isEmpty()
+               || address_text.isEmpty()) {
             OptionPane("Every Field is required", "Error Message");
         } else {
-            String insert = "INSERT INTO users(name, username, password, gender, address)"
-                    + "VALUES (?, ?, ?, ?, ?)";
+            String insert = "INSERT INTO users(name, username, password,  address)"
+                    + "VALUES (?, ?, ?, ?)";
             connection = dbConnection.getConnection();
             try {
                 pst = connection.prepareStatement(insert);
@@ -93,8 +88,7 @@ public class SignUpController implements Initializable {
                 pst.setString(1, name_text);
                 pst.setString(2, username_text);
                 pst.setString(3, password_text);
-                pst.setString(4, gender_text);
-                pst.setString(7, address_text);
+                pst.setString(4, address_text);
                 pst.executeUpdate();
                 OptionPane("Register Successfully", "Message");
             } catch (SQLException e) {
@@ -113,15 +107,7 @@ public class SignUpController implements Initializable {
         login.show();
     }
 
-    public String getGender() {
-        String gender = "";
-        if (male.isSelected()) {
-            gender = "Male";
-        } else if (female.isSelected()) {
-            gender = "Female";
-        }
-        return gender;
-    }
+
 
     private void OptionPane(String message, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
