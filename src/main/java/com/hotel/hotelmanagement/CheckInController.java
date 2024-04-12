@@ -201,30 +201,13 @@ public class CheckInController implements Initializable {
             }
 
 
-            if (name.equals("") || email.equals("") || gender.equals("") || nationality.equals("")
-                || number.equals("") || phone.equals("") || roomNo.equals("") || checkIn.equals("") || checkOut.equals("")) {
+            if (number.isEmpty()) {
             OptionPane("Every Field is required", "Error Message");
         } else {
-            String insertCustomer = "INSERT INTO customers(customerIDNumber, customerName, customerNationality, customerGender, customerPhoneNo, customerEmail)"
-                    + "VALUES (?, ?, ?, ?, ?, ?)";
+
             String insertReservation = "INSERT INTO reservations(customerIDNumber, roomNumber, checkInDate, checkOutDate) VALUES (?, ?, ?, ?)";
             String updateRoom = "UPDATE rooms SET status=\"Booked\" WHERE roomNumber=?";
-            try {
-                pst = connection.prepareStatement(insertCustomer);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                pst.setString(1, number);
-                pst.setString(2, name);
-                pst.setString(3, nationality);
-                pst.setString(4, gender);
-                pst.setString(5, phone);
-                pst.setString(6, email);
-                pst.executeUpdate();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+
             try {
                 pst = connection.prepareStatement(insertReservation);
             } catch (SQLException e) {
