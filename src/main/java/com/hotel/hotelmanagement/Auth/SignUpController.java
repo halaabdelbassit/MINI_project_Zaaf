@@ -1,6 +1,5 @@
-package com.hotel.hotelmanagement.Auth;
+package com.hotel.hotelmanagement;
 
-import com.hotel.hotelmanagement.DBConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +11,9 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
@@ -42,15 +43,21 @@ public class SignUpController implements Initializable {
 
     @FXML
     private TextField username;
-    DBConnection dbConnection;
-    Connection connection;
 
+    private Connection connection;
+
+    private DBConnection dbConnection;
+
+    private PreparedStatement pst;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
-        connection = DBConnection.getConnection();
-
+        question.getItems().removeAll(question.getItems());
+        question.getItems().addAll("What is the name of your first pet?",
+                "What was your first car?",
+                "What elementary school did you attend?",
+                "What is the name of the town where you were born?");
     }
 
     @FXML
@@ -69,28 +76,23 @@ public class SignUpController implements Initializable {
                || address_text.isEmpty()) {
             OptionPane("Every Field is required", "Error Message");
         } else {
-            Connection connection = DBConnection.getConnection();
-            CallableStatement pst = null;
+            String insert = "INSERT INTO users(name, username, password,  address)"
+                    + "VALUES (?, ?, ?, ?)";
+            connection = dbConnection.getConnection();
             try {
-              pst = connection.prepareCall("{? = call signup(?,?,?,?)}");
-              pst.registerOutParameter(1, Types.VARCHAR);
-              pst.setString(2,name_text);
-              pst.setString(3,username_text);
-              pst.setString(4,password_text);
-              pst.setString(5,address_text);
-              pst.execute();
-
-              String massage = pst.getString(1);
-                OptionPane(massage, "Message");
+                pst = connection.prepareStatement(insert);
             } catch (SQLException e) {
                 e.printStackTrace();
-            }finally {
-                try {
-                    if (pst != null)
-                        pst.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
+            }
+            try {
+                pst.setString(1, name_text);
+                pst.setString(2, username_text);
+                pst.setString(3, password_text);
+                pst.setString(4, address_text);
+                pst.executeUpdate();
+                OptionPane("Register Successfully", "Message");
+            } catch (SQLException e) {
+                e.printStackTrace();
             }
         }
     }
