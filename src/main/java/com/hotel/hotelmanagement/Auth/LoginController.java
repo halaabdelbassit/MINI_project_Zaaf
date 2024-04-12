@@ -75,7 +75,8 @@ public class LoginController implements Initializable {
                 signup.setScene(scene);
                 signup.show();
             } else {
-                OptionPane("Username or Password is not Correct", "Error Message");
+                System.out.println("Username or Password is not Correct");
+                //OptionPane("Username or Password is not Correct", "Error Message");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -91,7 +92,7 @@ public class LoginController implements Initializable {
         signup.setScene(scene);
         signup.show();
     }
-
+    /*
     private void OptionPane(String message, String title) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.initStyle(StageStyle.UTILITY);
@@ -99,7 +100,7 @@ public class LoginController implements Initializable {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
+    }*/
 }
 
 
