@@ -1,18 +1,16 @@
 package com.hotel.hotelmanagement.Auth;
 
 import com.hotel.hotelmanagement.DBConnection;
-import com.hotel.hotelmanagement.homepage.HomePageController;
+import com.hotel.hotelmanagement.HomePageController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;

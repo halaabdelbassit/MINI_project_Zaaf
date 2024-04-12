@@ -1,4 +1,4 @@
-package com.hotel.hotelmanagement.homepage;
+package com.hotel.hotelmanagement;
 
 import javafx.animation.FadeTransition;
 import javafx.fxml.FXML;
