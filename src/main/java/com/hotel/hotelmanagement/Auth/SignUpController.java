@@ -1,5 +1,6 @@
-package com.hotel.hotelmanagement;
+package com.hotel.hotelmanagement.Auth;
 
+import com.hotel.hotelmanagement.DBConnection;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -53,11 +54,6 @@ public class SignUpController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
-        question.getItems().removeAll(question.getItems());
-        question.getItems().addAll("What is the name of your first pet?",
-                "What was your first car?",
-                "What elementary school did you attend?",
-                "What is the name of the town where you were born?");
     }
 
     @FXML
